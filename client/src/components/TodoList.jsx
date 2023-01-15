@@ -97,9 +97,9 @@ const TodoList = (props) => {
                             {/* input: checked set to item state's value.
                                 checked also requires onChange in order to update the item state directly
                                 passing in the index value */}
-                            <input checked={item.completed} type="checkbox" className="mx-2" onChange={(e) => handleCheck(i)} />
+                            <input id={i} checked={item.completed} type="checkbox" className="mx-2" onChange={(e) => handleCheck(i)} />
                             {/* label: turnary opperator for objs attribute rendering ?true or :false */}
-                            <label className={item.completed ? "text-decoration-line-through" : ""}>{item.textData}</label>
+                            <label htmlFor={i} className={item.completed ? "text-decoration-line-through" : ""}>{item.textData}</label>
                         </div>
                         {/* button: onClick used for removal passing in index value */}
                         <button className="btn btn-outline-danger mx-2 m" onClick={() => { handleDelete(i) }}>Delete</button>
