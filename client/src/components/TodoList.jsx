@@ -76,6 +76,7 @@ const TodoList = (props) => {
                     className="form-control my-2"
                     type="text"
                     onChange={(e) => setText(e.target.value)}
+                    // value: default to text. on submit reset value to ''
                     value={text} />
                 <button className="btn btn-primary d-flex align-items-start" type="submit">Add</button>
             </form>
@@ -84,13 +85,15 @@ const TodoList = (props) => {
                 items.map((item, i) => (
                     // div must contain key for react to keep track of
                     // this is provided with the .map(array, **INDEX**)
-                    <div className="d-flex align-items-center my-2" key={i}>
-                        {/* label: turnary opperator for objs attribute rendering ?true or :false */}
-                        <label className={item.completed ? "text-decoration-line-through" : ""}>{item.textData}</label>
-                        {/* input: checked requires onChange in order to update the mapped item directly */}
-                        <input checked={item.completed} type="checkbox" className="mx-2" onChange={(e) => handleCheck(i)} />
+                    <div className="d-flex align-items-center justify-content-between my-2" key={i}>
+                        <div>
+                            {/* input: checked requires onChange in order to update the mapped item directly */}
+                            <input checked={item.completed} type="checkbox" className="mx-2" onChange={(e) => handleCheck(i)} />
+                            {/* label: turnary opperator for objs attribute rendering ?true or :false */}
+                            <label className={item.completed ? "text-decoration-line-through" : ""}>{item.textData}</label>
+                        </div>
                         {/* button: onClick used for removal passing in index value */}
-                        <button className="btn btn-outline-danger mx-2" onClick={() => { handleDelete(i) }}>Delete</button>
+                        <button className="btn btn-outline-danger mx-2 m" onClick={() => { handleDelete(i) }}>Delete</button>
                     </div >
                 ))
             }
