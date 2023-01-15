@@ -70,7 +70,7 @@ const TodoList = (props) => {
 
     return (
         <div className="container w-50 m-auto ">
-            <h1>Black Belts!</h1>
+            <h1>Todo List!</h1>
             <form onSubmit={handleSubmit}>
                 <input
                     className="form-control my-2"
