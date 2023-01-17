@@ -24,7 +24,7 @@ const TodoList = (props) => {
         }
         // Push new item to list with previous ...unpacked items
         setItems([...items, item]);
-        // Reset text to blank and call it with in the input tag using value={text}
+        // Reset text to blank and call it with-in the input tag using value={text}
         setText('');
     }
 
@@ -88,17 +88,17 @@ const TodoList = (props) => {
                 <button className="btn btn-primary d-flex align-items-start" type="submit">Add</button>
             </form>
             {
-                // Iterate over items using .map(array, index)
+                // Iterate over items using .map(itterativeVariable, index)
                 items.map((item, i) => (
                     // div must contain key for react to keep track of
-                    // this is provided with the key using .map([], **INDEX**)
+                    // this is provided with the key using .map(iV, **INDEX**)
                     <div className="d-flex align-items-center justify-content-between my-2" key={i}>
                         <div>
-                            {/* input: checked set to item state's value.
+                            {/* input: checked set to item.completed state's value.
                                 checked also requires onChange in order to update the item state directly
                                 passing in the index value */}
                             <input id={i} checked={item.completed} type="checkbox" className="mx-2" onChange={(e) => handleCheck(i)} />
-                            {/* label: turnary opperator for objs attribute rendering ?true or :false */}
+                            {/* label: turnary opperator (condition ? true : false) for conditional rendering based on state */}
                             <label htmlFor={i} className={item.completed ? "text-decoration-line-through" : ""}>{item.textData}</label>
                         </div>
                         {/* button: onClick used for removal passing in index value */}
