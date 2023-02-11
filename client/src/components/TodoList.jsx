@@ -1,7 +1,7 @@
 // Utilize React Hooks, they will always start with the word use
 import React, { useState } from "react";
 
-const TodoList = (props) => {
+const TodoList = () => {
     // Getters and Setters for state
     const [text, setText] = useState("")    // input text tag
     const [items, setItems] = useState([])  // Items/Objects built from text
